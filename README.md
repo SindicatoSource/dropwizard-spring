@@ -16,7 +16,7 @@ Very soon kids...
 ### Gradle Setup
 
 1. Add the following both repos in your _build.gradle_ file
-```
+```groovy
 repositories {
     maven {
       url 'http://oss.sonatype.org/content/repositories/snapshots'
@@ -28,14 +28,14 @@ repositories {
  ```
 
 2. Add the following dependency
-```
+```groovy
 dependencies {
   compile 'sindica.to:dropwizard-spring:0.1.0-SNAPSHOT'
 }
 ```
 
 3. Create your Dropwizard Application extending from _sindica.to.dropwizard.spring.SpringApplication_
-```
+```java
 import sindica.to.dropwizard.spring.SpringApplication;
 public class MyApp extends SpringApplication<MyConf> {
   public static void main(String[] args) throws Exception {
