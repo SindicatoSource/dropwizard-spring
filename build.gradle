@@ -1,0 +1,150 @@
+/*
+ * Copyright 2013 Domingo Suarez Torres
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+apply plugin: 'groovy'
+apply plugin: 'project-report'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'jacoco'
+apply plugin: 'sonar-runner'
+
+version = '0.1.0-SNAPSHOT'
+group = 'sindica.to'
+
+// Use Java 7 by default
+project.sourceCompatibility = 1.7
+project.targetCompatibility = 1.7
+
+tasks.withType(Compile) {
+  options.encoding = 'UTF-8'
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '1.6'
+}
+
+task sourcesJar(type: Jar) {
+  from sourceSets.main.allSource
+  classifier = 'sources'
+}
+
+// Set our project variables
+project.ext {
+  dropwizardVersion = '0.7.0-SNAPSHOT'
+  springVersion = '3.2.3.RELEASE'
+}
+
+configurations {
+  deployerJars
+  published.extendsFrom archives, meta
+}
+
+repositories {
+  mavenCentral()
+  mavenLocal()
+}
+
+dependencies {
+  compile "org.springframework:spring-web:${springVersion}"
+  compile("com.codahale.dropwizard:dropwizard-core:${dropwizardVersion}")
+
+  testCompile 'org.codehaus.groovy:groovy-all:2.1.6'
+  testCompile 'junit:junit:4.11'
+  testCompile 'org.mockito:mockito-all:1.9.5'
+  testCompile 'org.easytesting:fest-assert-core:2.0M10'
+  
+  deployerJars 'org.apache.maven.wagon:wagon-http-lightweight:2.4'
+}
+
+jacocoTestReport {
+  reports {
+    html.enabled = true
+    xml.enabled = true
+    csv.enabled = true
+  }
+}
+
+
+sonarRunner {
+  sonarProperties {
+    property 'sonar.language', 'java'
+    //property "sonar.host.url", "http://sonar.ssdt-ohio.org/"
+    //property "sonar.jdbc.url", ant.properties['sonar.jdbc.url']
+    //property "sonar.jdbc.driverClassName", ant.properties['sonar.jdbc.driverClassName']
+    //property "sonar.jdbc.username", ant.properties['sonar.jdbc.username']
+    //property "sonar.jdbc.password", ant.properties['sonar.jdbc.password']
+    //property "sonar.build-stability.url", "http://bamboo.ssdt-ohio.org/browse/${gradle.bambooPlan}"
+    property "sonar.scm.url", "scm:git:ssh://git@github.com:SindicatoSource/dropwizard-spring.git"
+    property "sonar.projectKey", "sindica.to:dropwizard-spring"
+    property "sonar.projectName", "Spring Framework for Dropwizard"
+    property "sonar.projectVersion", project.version
+  }
+}
+
+artifacts {
+  archives sourcesJar
+}
+
+uploadArchives {
+  repositories.mavenDeployer {
+
+    repository(url: 'http://repo.sindica.to/nexus/content/repositories/public-milestones/') {
+
+    }
+    pom.project {
+      name 'dropwizard-spring'
+      packaging 'jar'
+      description 'Spring Framework for Dropwizard'
+      url 'https://sindicatosource.github.io/dropwizard-spring'
+      organization {
+        name 'Sindicato Source'
+        url 'http://sindica.to'
+      }
+      developers {
+        developer {
+          id 'domix'
+          name 'Domingo Suarez Torres'
+          email 'domingo.suarez@gmail.com'
+          organization 'Sindicato Source'
+          organizationUrl 'http://sindica.to'
+          /*roles {
+              rol 'developer'
+          }*/
+        }
+      }
+      issueManagement {
+        system 'GITHUB'
+        url 'https://github.com/SindicatoSource/dropwizard-spring/issues'
+      }
+      scm {
+        connection 'scm:git:git@github.com:SindicatoSource/dropwizard-spring.git'
+        developerConnection 'scm:git:git@github.com:SindicatoSource/dropwizard-spring.git'
+      }
+      licenses {
+          license {
+              name 'The Apache Software License, Version 2.0'
+              url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+              distribution 'repo'
+          }
+      }
+    }
+  }
+}
+
+task release(dependsOn: [check, uploadArchives],
+    group: "Release artifact",
+    description: "Generates and uploads a final release to Sindicato Source Maven Repo")
