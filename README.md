@@ -11,6 +11,7 @@ Dropwizard with Spring Framework support for DI
 
 ### Gradle Setup
 
+1. Add below both repos in your _build.gradle_ file
 ```
 repositories {
     maven {
@@ -21,3 +22,11 @@ repositories {
     }
 }
  ```
+
+2. Add the following dependency
+
+```
+dependencies {
+  compile 'sindica.to:dropwizard-spring:0.1.0-SNAPSHOT'
+}
+```
