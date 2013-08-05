@@ -36,6 +36,11 @@ dependencies {
 
 3. Create your Dropwizard Application extending from _sindica.to.dropwizard.spring.SpringApplication_
 ```
+import sindica.to.dropwizard.spring.SpringApplication
 
-public class
+public class MyApp extends SpringApplication<MyConf> {
+  public static void main(String[] args) throws Exception {
+    new MyApp().run(args);
+  }
+}
 ```
