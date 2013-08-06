@@ -12,6 +12,6 @@ import java.util.List;
 public class PersonResource {
   @GET
   public List<Person> list() {
-
+    return null;
   }
 }
