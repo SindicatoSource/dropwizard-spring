@@ -39,11 +39,40 @@ Very soon kids...
 3. Create your Dropwizard Application extending from _sindica.to.dropwizard.spring.SpringApplication_
 
     ```java
+    package sindica.to.sample;
+
     import sindica.to.dropwizard.spring.SpringApplication;
 
     public class MyApp extends SpringApplication<MyConf> {
       public static void main(String[] args) throws Exception {
         new MyApp().run(args);
       }
+
+      @Override
+      public void onConfigureSpringContext(AnnotationConfigWebApplicationContext applicationContext) {
+        applicationContext.scan("sindica.to.sample");
+      }
     }
     ```
+4. Create the usual Dropwizard artifacts as always
+
+    ```
+    package sindica.to.sample.resource;
+
+    import org.springframework.stereotype.Component;
+    import sindica.to.sample.model.Person;
+
+    import javax.ws.rs.GET;
+    import javax.ws.rs.Path;
+    import java.util.List;
+
+    @Path("/person")
+    @Component
+    public class PersonResource {
+      @GET
+      public List<Person> list() {
+        //TODO: implement this...
+      }
+    }
+    ```
+    The trick is to add the Spring's Annotations like _@Component_
