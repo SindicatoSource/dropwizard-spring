@@ -61,7 +61,7 @@ public abstract class BaseSpringApplication<T extends Configuration> extends App
    *
    * @param applicationContext
    */
-  abstract void onConfigureSpringContext(AnnotationConfigWebApplicationContext applicationContext);
+  abstract public void onConfigureSpringContext(AnnotationConfigWebApplicationContext applicationContext);
 
 
   @Override

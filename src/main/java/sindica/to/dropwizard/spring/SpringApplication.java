@@ -35,6 +35,6 @@ public abstract class SpringApplication<T extends Configuration> extends BaseSpr
   }
 
   @Override
-  void onConfigureSpringContext(AnnotationConfigWebApplicationContext applicationContext) {
+  public void onConfigureSpringContext(AnnotationConfigWebApplicationContext applicationContext) {
   }
 }
