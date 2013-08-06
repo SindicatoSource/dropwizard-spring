@@ -36,7 +36,9 @@ Very soon kids...
     }
     ```
 
-3. Create your Dropwizard Application extending from _sindica.to.dropwizard.spring.SpringApplication_
+## Development
+
+1. Create your Dropwizard Application extending from _sindica.to.dropwizard.spring.SpringApplication_
 
     ```java
     package sindica.to.sample;
@@ -56,7 +58,7 @@ Very soon kids...
       }
     }
     ```
-4. Create the usual Dropwizard artifacts as always
+2. Create the usual Dropwizard artifacts as always
 
     ```java
     package sindica.to.sample.resource;
@@ -79,4 +81,4 @@ Very soon kids...
     ```
     The trick is to add the Spring's Annotations like _@Component_
 
-5. Enjoy, hack, deliver, profit¡
+3. Enjoy, hack, deliver, profit¡
