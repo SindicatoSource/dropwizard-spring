@@ -50,7 +50,8 @@ Very soon kids...
 
       @Override
       public void onConfigureSpringContext(AnnotationConfigWebApplicationContext applicationContext) {
-        //Scan the your own packages for Spring beans (@Component, @Repository, @Inject, @Autowired, etc)
+        //Scan your own packages for Spring beans with annotations
+        //like @Component, @Repository, @Inject, @Autowired, etc
         applicationContext.scan("sindica.to.sample");
       }
     }
@@ -77,3 +78,5 @@ Very soon kids...
     }
     ```
     The trick is to add the Spring's Annotations like _@Component_
+
+5. Enjoy, hack, deliver, profit¡
