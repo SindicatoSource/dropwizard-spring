@@ -17,16 +17,16 @@ Very soon kids...
 
 1. Add the following both repos in your _build.gradle_ file
 
-  ```groovy
-  repositories {
-    maven {
-      url 'http://oss.sonatype.org/content/repositories/snapshots'
+    ```groovy
+    repositories {
+      maven {
+        url 'http://oss.sonatype.org/content/repositories/snapshots'
+      }
+      maven {
+        url 'http://repo.sindica.to/nexus/content/repositories/public-milestones/'
+      }
     }
-    maven {
-      url 'http://repo.sindica.to/nexus/content/repositories/public-milestones/'
-    }
-  }
-  ```
+    ```
 
 2. Add the following dependency
    
