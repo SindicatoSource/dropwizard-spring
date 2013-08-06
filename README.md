@@ -50,13 +50,14 @@ Very soon kids...
 
       @Override
       public void onConfigureSpringContext(AnnotationConfigWebApplicationContext applicationContext) {
+        //Scan the your own packages for Spring beans (@Component, @Repository, @Inject, @Autowired, etc)
         applicationContext.scan("sindica.to.sample");
       }
     }
     ```
 4. Create the usual Dropwizard artifacts as always
 
-    ```
+    ```java
     package sindica.to.sample.resource;
 
     import org.springframework.stereotype.Component;
