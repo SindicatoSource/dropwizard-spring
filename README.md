@@ -30,20 +30,20 @@ Very soon kids...
 
 2. Add the following dependency
    
-   ```groovy
-   dependencies {
-     compile 'sindica.to:dropwizard-spring:0.1.0-SNAPSHOT'
-   }
-   ```
+    ```groovy
+    dependencies {
+      compile 'sindica.to:dropwizard-spring:0.1.0-SNAPSHOT'
+    }
+    ```
 
 3. Create your Dropwizard Application extending from _sindica.to.dropwizard.spring.SpringApplication_
 
-   ```java
-   import sindica.to.dropwizard.spring.SpringApplication;
+    ```java
+    import sindica.to.dropwizard.spring.SpringApplication;
 
-   public class MyApp extends SpringApplication<MyConf> {
-     public static void main(String[] args) throws Exception {
-       new MyApp().run(args);
-     }
-   }
-   ```
+    public class MyApp extends SpringApplication<MyConf> {
+      public static void main(String[] args) throws Exception {
+        new MyApp().run(args);
+      }
+    }
+    ```
