@@ -31,7 +31,7 @@ import javax.servlet.ServletContextListener;
  */
 public class SpringContextLoaderListener implements ServletContextListener {
 
-  AnnotationConfigWebApplicationContext context;
+  private AnnotationConfigWebApplicationContext context;
 
   public SpringContextLoaderListener(AnnotationConfigWebApplicationContext context) {
     this.context = context;

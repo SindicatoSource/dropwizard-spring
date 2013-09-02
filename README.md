@@ -8,7 +8,7 @@ We love Dropwizard and Spring framework. Unfortunately the existing solutions to
 And we love pragmatic programming models. The less we write, the more happiness we have.
 That's the reason this project was born.
 
-## Buils Status
+## Build Status
 [![Build Status](http://jenkins.sindica.to/buildStatus/icon?job=DropwizardSpring master build)](http://jenkins.sindica.to/job/DropwizardSpring%20master%20build/)
 
 ## Setup
