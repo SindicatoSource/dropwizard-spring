@@ -45,7 +45,7 @@ task sourcesJar(type: Jar) {
 // Set our project variables
 project.ext {
   dropwizardVersion = '0.7.0-SNAPSHOT'
-  springVersion = '3.2.3.RELEASE'
+  springVersion = '3.2.4.RELEASE'
 }
 
 configurations {
