@@ -90,7 +90,7 @@ sonarRunner {
     property "sonar.jdbc.driverClassName", "com.mysql.jdbc.Driver"
     property "sonar.jdbc.username", "sonar"
     property "sonar.jdbc.password", "sonar"
-    //property "sonar.build-stability.url", "http://bamboo.ssdt-ohio.org/browse/${gradle.bambooPlan}"
+    property "sonar.build-stability.url", "http://jenkins.sindica.to/job/DropwizardSpring%20master%20build/"
     property "sonar.scm.url", "scm:git:ssh://git@github.com:SindicatoSource/dropwizard-spring.git"
     property "sonar.projectKey", "sindica.to:dropwizard-spring"
     property "sonar.projectName", "Spring Framework for Dropwizard"
