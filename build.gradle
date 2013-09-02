@@ -133,6 +133,10 @@ uploadArchives {
         system 'GITHUB'
         url 'https://github.com/SindicatoSource/dropwizard-spring/issues'
       }
+      ciManagement {
+        system 'Jenkins'
+        url 'http://jenkins.sindica.to/job/DropwizardSpring%20master%20build/'
+      }
       scm {
         connection 'scm:git:git@github.com:SindicatoSource/dropwizard-spring.git'
         developerConnection 'scm:git:git@github.com:SindicatoSource/dropwizard-spring.git'
