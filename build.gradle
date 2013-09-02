@@ -85,11 +85,11 @@ jacocoTestReport {
 sonarRunner {
   sonarProperties {
     property 'sonar.language', 'java'
-    //property "sonar.host.url", "http://sonar.ssdt-ohio.org/"
-    //property "sonar.jdbc.url", ant.properties['sonar.jdbc.url']
-    //property "sonar.jdbc.driverClassName", ant.properties['sonar.jdbc.driverClassName']
-    //property "sonar.jdbc.username", ant.properties['sonar.jdbc.username']
-    //property "sonar.jdbc.password", ant.properties['sonar.jdbc.password']
+    property "sonar.host.url", "http://sonar.sindica.to/"
+    property "sonar.jdbc.url", "jdbc:mysql://localhost/sonar?useUnicode=yes&characterEncoding=UTF-8"
+    property "sonar.jdbc.driverClassName", "com.mysql.jdbc.Driver"
+    property "sonar.jdbc.username", "sonar"
+    property "sonar.jdbc.password", "sonar"
     //property "sonar.build-stability.url", "http://bamboo.ssdt-ohio.org/browse/${gradle.bambooPlan}"
     property "sonar.scm.url", "scm:git:ssh://git@github.com:SindicatoSource/dropwizard-spring.git"
     property "sonar.projectKey", "sindica.to:dropwizard-spring"
