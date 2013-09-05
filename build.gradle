@@ -135,7 +135,7 @@ uploadArchives {
       }
       ciManagement {
         system 'Jenkins'
-        url 'http://jenkins.sindica.to/job/DropwizardSpring_master_build/'
+        url 'Hudson:http://jenkins.sindica.to/job/DropwizardSpring_master_build/'
       }
       scm {
         connection 'scm:git:git@github.com:SindicatoSource/dropwizard-spring.git'
