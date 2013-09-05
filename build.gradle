@@ -67,8 +67,7 @@ dependencies {
 
   testCompile 'org.codehaus.groovy:groovy-all:2.1.6'
   testCompile 'junit:junit:4.11'
-  testCompile 'org.mockito:mockito-all:1.9.5'
-  testCompile 'org.easytesting:fest-assert-core:2.0M10'
+  testCompile "org.spockframework:spock-core:1.0-groovy-2.0-SNAPSHOT"
   
   deployerJars 'org.apache.maven.wagon:wagon-http-lightweight:2.4'
 }
