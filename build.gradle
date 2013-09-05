@@ -111,7 +111,7 @@ uploadArchives {
       name 'dropwizard-spring'
       packaging 'jar'
       description 'Spring Framework for Dropwizard'
-      url 'https://sindicatosource.github.io/dropwizard-spring'
+      url 'http://sindicatosource.github.io/dropwizard-spring'
       organization {
         name 'Sindicato Source'
         url 'http://sindica.to'
