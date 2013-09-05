@@ -9,7 +9,7 @@ And we love pragmatic programming models. The less we write, the more happiness 
 That's the reason this project was born.
 
 ## Build Status
-[![Build Status](http://jenkins.sindica.to/job/DropwizardSpring%20master%20build/badge/icon)](http://jenkins.sindica.to/job/DropwizardSpring%20master%20build/)
+[![Build Status](http://jenkins.sindica.to/job/DropwizardSpring_master_build/badge/icon)](http://jenkins.sindica.to/job/DropwizardSpring_master_build/)
 
 ## Setup
 
