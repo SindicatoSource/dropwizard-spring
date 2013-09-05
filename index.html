@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Dropwizard-spring by SindicatoSource</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Dropwizard-spring</h1>
+          <h2>Dropwizard with Spring Framework support for DI</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/SindicatoSource/dropwizard-spring/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/SindicatoSource/dropwizard-spring/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/SindicatoSource/dropwizard-spring" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="spring-framework-support-for-dropwizard" class="anchor" href="#spring-framework-support-for-dropwizard"><span class="octicon octicon-link"></span></a>Spring Framework support for Dropwizard</h1>
+
+<p>Dropwizard with Spring Framework support for DI</p>
+
+<h2>
+<a name="motivation" class="anchor" href="#motivation"><span class="octicon octicon-link"></span></a>Motivation</h2>
+
+<p>We love Dropwizard and Spring framework. Unfortunately the existing solutions to bring together both technologies are outdated. We like Dropwizard latest version (yeah, the 0.7.0-SNAPSHOT).</p>
+
+<p>And we love pragmatic programming models. The less we write, the more happiness we have.
+That's the reason this project was born.</p>
+
+<h2>
+<a name="build-status" class="anchor" href="#build-status"><span class="octicon octicon-link"></span></a>Build Status</h2>
+
+<p><a href="http://jenkins.sindica.to/job/DropwizardSpring_master_build/"><img src="http://jenkins.sindica.to/job/DropwizardSpring_master_build/badge/icon" alt="Build Status"></a></p>
+
+<h2>
+<a name="setup" class="anchor" href="#setup"><span class="octicon octicon-link"></span></a>Setup</h2>
+
+<h3>
+<a name="maven-setup" class="anchor" href="#maven-setup"><span class="octicon octicon-link"></span></a>Maven Setup</h3>
+
+<p>Very soon kids...</p>
+
+<h3>
+<a name="gradle-setup" class="anchor" href="#gradle-setup"><span class="octicon octicon-link"></span></a>Gradle Setup</h3>
+
+<ol>
+<li>
+<p>Add the following both repos in your <em>build.gradle</em> file</p>
+
+<div class="highlight"><pre><span class="n">repositories</span> <span class="o">{</span>
+  <span class="n">maven</span> <span class="o">{</span>
+    <span class="n">url</span> <span class="s1">'http://oss.sonatype.org/content/repositories/snapshots'</span>
+  <span class="o">}</span>
+  <span class="n">maven</span> <span class="o">{</span>
+    <span class="n">url</span> <span class="s1">'http://repo.sindica.to/nexus/content/repositories/public-milestones/'</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</li>
+<li>
+<p>Add the following dependency</p>
+
+<div class="highlight"><pre><span class="n">dependencies</span> <span class="o">{</span>
+  <span class="n">compile</span> <span class="s1">'sindica.to:dropwizard-spring:0.2.0-SNAPSHOT'</span>
+<span class="o">}</span>
+</pre></div>
+</li>
+</ol><h2>
+<a name="development" class="anchor" href="#development"><span class="octicon octicon-link"></span></a>Development</h2>
+
+<ol>
+<li>
+<p>Create your Dropwizard Application extending from <em>sindica.to.dropwizard.spring.SpringApplication</em></p>
+
+<div class="highlight"><pre><span class="kn">package</span> <span class="n">sindica</span><span class="o">.</span><span class="na">to</span><span class="o">.</span><span class="na">sample</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">sindica.to.dropwizard.spring.SpringApplication</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyApp</span> <span class="kd">extends</span> <span class="n">SpringApplication</span><span class="o">&lt;</span><span class="n">MyConf</span><span class="o">&gt;</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="k">new</span> <span class="nf">MyApp</span><span class="o">().</span><span class="na">run</span><span class="o">(</span><span class="n">args</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onConfigureSpringContext</span><span class="o">(</span><span class="n">AnnotationConfigWebApplicationContext</span> <span class="n">applicationContext</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//Scan your own packages for Spring beans with annotations</span>
+    <span class="c1">//like @Component, @Repository, @Inject, @Autowired, etc</span>
+    <span class="n">applicationContext</span><span class="o">.</span><span class="na">scan</span><span class="o">(</span><span class="s">"sindica.to.sample"</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</li>
+<li>
+<p>Create the usual Dropwizard artifacts as always</p>
+
+<div class="highlight"><pre><span class="kn">package</span> <span class="n">sindica</span><span class="o">.</span><span class="na">to</span><span class="o">.</span><span class="na">sample</span><span class="o">.</span><span class="na">resource</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Component</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">sindica.to.sample.model.Person</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.ws.rs.GET</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.ws.rs.Path</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="nd">@Path</span><span class="o">(</span><span class="s">"/person"</span><span class="o">)</span>
+<span class="nd">@Component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonResource</span> <span class="o">{</span>
+  <span class="nd">@GET</span>
+  <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="nf">list</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">//TODO: implement this...</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+<p>The trick is to add the Spring's Annotations like <em><a href="https://github.com/Component" class="user-mention">@Component</a></em></p>
+</li>
+<li><p>Enjoy, hack, deliver, profit¡</p></li>
+</ol>
+        </section>
+
+        <footer>
+          Dropwizard-spring is maintained by <a href="https://github.com/SindicatoSource">SindicatoSource</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
