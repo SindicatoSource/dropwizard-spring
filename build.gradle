@@ -22,7 +22,7 @@ apply plugin: 'maven'
 apply plugin: 'jacoco'
 apply plugin: 'sonar-runner'
 
-version = '0.2.0-SNAPSHOT'
+version = '0.3.0-SNAPSHOT'
 group = 'sindica.to'
 
 // Use Java 7 by default
@@ -45,7 +45,7 @@ task sourcesJar(type: Jar) {
 // Set our project variables
 project.ext {
   dropwizardVersion = '0.7.0-SNAPSHOT'
-  springVersion = '3.2.4.RELEASE'
+  springVersion = '4.0.0.RELEASE'
 }
 
 configurations {
@@ -65,9 +65,9 @@ dependencies {
   compile "org.springframework:spring-web:${springVersion}"
   compile("com.codahale.dropwizard:dropwizard-core:${dropwizardVersion}")
 
-  testCompile 'org.codehaus.groovy:groovy-all:2.1.6'
+  testCompile 'org.codehaus.groovy:groovy-all:2.2.1'
   testCompile 'junit:junit:4.11'
-  testCompile "org.spockframework:spock-core:1.0-groovy-2.0-SNAPSHOT"
+  testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
   
   deployerJars 'org.apache.maven.wagon:wagon-http-lightweight:2.4'
 }
