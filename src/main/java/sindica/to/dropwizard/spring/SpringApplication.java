@@ -16,9 +16,9 @@
  */
 package sindica.to.dropwizard.spring;
 
-import com.codahale.dropwizard.Configuration;
-import com.codahale.dropwizard.setup.Bootstrap;
-import com.codahale.dropwizard.setup.Environment;
+import io.dropwizard.Configuration;
+import io.dropwizard.setup.Bootstrap;
+import io.dropwizard.setup.Environment;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 
 /**

@@ -1,6 +1,6 @@
 package sindica.to.sample.configuration;
 
-import com.codahale.dropwizard.Configuration;
+import io.dropwizard.Configuration;
 
 /**
  * Created with IntelliJ IDEA.

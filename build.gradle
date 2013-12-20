@@ -63,7 +63,7 @@ repositories {
 
 dependencies {
   compile "org.springframework:spring-web:${springVersion}"
-  compile("com.codahale.dropwizard:dropwizard-core:${dropwizardVersion}")
+  compile("io.dropwizard:dropwizard-core:${dropwizardVersion}")
 
   testCompile 'org.codehaus.groovy:groovy-all:2.2.1'
   testCompile 'junit:junit:4.11'

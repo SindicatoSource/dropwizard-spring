@@ -16,12 +16,12 @@
  */
 package sindica.to.dropwizard.spring;
 
-import com.codahale.dropwizard.Application;
-import com.codahale.dropwizard.Configuration;
-import com.codahale.dropwizard.lifecycle.Managed;
-import com.codahale.dropwizard.servlets.tasks.Task;
-import com.codahale.dropwizard.setup.Bootstrap;
-import com.codahale.dropwizard.setup.Environment;
+import io.dropwizard.Application;
+import io.dropwizard.Configuration;
+import io.dropwizard.lifecycle.Managed;
+import io.dropwizard.servlets.tasks.Task;
+import io.dropwizard.setup.Bootstrap;
+import io.dropwizard.setup.Environment;
 import com.codahale.metrics.health.HealthCheck;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
