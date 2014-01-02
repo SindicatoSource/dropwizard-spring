@@ -35,7 +35,7 @@ Very soon kids...
    
     ```groovy
     dependencies {
-      compile 'sindica.to:dropwizard-spring:0.2.0-SNAPSHOT'
+      compile 'sindica.to:dropwizard-spring:0.3.0-SNAPSHOT'
     }
     ```
 
