@@ -44,7 +44,7 @@ task sourcesJar(type: Jar) {
 
 // Set our project variables
 project.ext {
-  dropwizardVersion = '0.7.0-SNAPSHOT'
+  dropwizardVersion = '0.7.0-rc1'
   springVersion = '4.0.0.RELEASE'
 }
 
@@ -56,9 +56,6 @@ configurations {
 repositories {
   mavenCentral()
   mavenLocal()
-  maven {
-    url 'http://oss.sonatype.org/content/repositories/snapshots'
-  }
 }
 
 dependencies {
